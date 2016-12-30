@@ -117,6 +117,8 @@ static inline int zcache_comp_op(enum comp_op op,
 	case ZCACHE_COMPOP_DECOMPRESS:
 		ret = crypto_comp_decompress(tfm, src, slen, dst, dlen);
 		break;
+	default:
+		ret = -EINVAL;
 	}
 	put_cpu();
 	return ret;
@@ -980,7 +982,7 @@ int zcache_new_client(uint16_t cli_id)
 		goto out;
 	cli->allocated = 1;
 #ifdef CONFIG_FRONTSWAP
-	cli->zspool = zs_create_pool("zcache", ZCACHE_GFP_MASK);
+	cli->zspool = zs_create_pool(ZCACHE_GFP_MASK);
 	if (cli->zspool == NULL)
 		goto out;
 	idr_init(&cli->tmem_pools);
