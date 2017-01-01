@@ -83,3 +83,4 @@ obj-y += lge_tty_atcmd.o
 obj-y += lge_kcal.o
 #LGE_CHANGE_E jungrock.oh@lge.com 2013-01-05 add lge_kcal 
 obj-$(CONFIG_BLX)		+= blx.o
+obj-$(CONFIG_QDSP5_VOLUME_BOOST_HAX) += volume_boost.o
