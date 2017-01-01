@@ -13,7 +13,7 @@
 
 static unsigned int boost_val = 0;
 
-unsigned short get_vol_boost_val() {
+static int get_vol_boost_val() {
 	return (unsigned short)(boost_val * 1024);
 }
 
