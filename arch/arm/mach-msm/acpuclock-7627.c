@@ -669,7 +669,7 @@ static void acpuclk_set_div(const struct clkctl_acpu_speed *hunt_s)
 {
 	uint32_t reg_clkctl, reg_clksel, clk_div, src_sel;
 
-#ifdef CONFIG_MSM7X27A_OVERCLOCK	
+#ifdef CONFIG_MSM7X27A_OVERCLOCK_PERFORMANCE	
 	uint32_t a11_div;	
 #endif
 
@@ -677,7 +677,7 @@ static void acpuclk_set_div(const struct clkctl_acpu_speed *hunt_s)
 
 	/* AHB_CLK_DIV */
 	clk_div = (reg_clksel >> 1) & 0x03;
-#ifdef CONFIG_MSM7X27A_OVERCLOCK
+#ifdef CONFIG_MSM7X27A_OVERCLOCK_PERFORMANCE
 
 #ifdef CONFIG_MACH_MSM7X25A_M4
 	a11_div=hunt_s->a11clk_src_div;
@@ -716,7 +716,7 @@ static void acpuclk_set_div(const struct clkctl_acpu_speed *hunt_s)
 	reg_clkctl = readl_relaxed(A11S_CLK_CNTL_ADDR);
 	reg_clkctl &= ~(0xFF << (8 * src_sel));
 	reg_clkctl |= hunt_s->a11clk_src_sel << (4 + 8 * src_sel);
-#ifdef CONFIG_MSM7X27A_OVERCLOCK
+#ifdef CONFIG_MSM7X27A_OVERCLOCK_PERFORMANCE
 	reg_clkctl |= a11_div << (0 + 8 * src_sel);
 #else
 	reg_clkctl |= hunt_s->a11clk_src_div << (0 + 8 * src_sel);
