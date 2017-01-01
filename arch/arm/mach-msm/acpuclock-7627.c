@@ -200,7 +200,7 @@ static struct clkctl_acpu_speed pll0_960_pll1_245_pll2_1200_pll4_800[] = {
 	{ 1, 480000, ACPU_PLL_0, 4, 1, 60000, 3, 5, 122880 },
 	{ 1, 600000, ACPU_PLL_2, 2, 1, 75000, 3, 6, 160000 },
 	{ 1, 800000, ACPU_PLL_4, 6, 0, 100000, 3, 7, 200000 },
-#ifdef CONFIG_MSM7X27A_OVERCLOCK
+#ifdef CONFIG_MSM7X27A_OVERCLOCK_PERFORMANCE
 	{ 1, 850000, ACPU_PLL_2, 2, 0, 106250, 3, 7, 200000 },
         { 1, 900000, ACPU_PLL_2, 2, 0, 112500, 3, 7, 200000 },
         { 1, 950000, ACPU_PLL_2, 2, 0, 118750, 3, 7, 200000 },
@@ -229,7 +229,7 @@ static struct clkctl_acpu_speed pll0_960_pll1_196_pll2_1200_pll4_800[] = {
 	{ 1, 480000, ACPU_PLL_0, 4, 1, 60000, 3, 5, 122880 },
 	{ 1, 600000, ACPU_PLL_2, 2, 1, 75000, 3, 6, 160000 },
 	{ 1, 800000, ACPU_PLL_4, 6, 0, 100000, 3, 7, 200000 },
-#ifdef CONFIG_MSM7X27A_OVERCLOCK
+#ifdef CONFIG_MSM7X27A_OVERCLOCK_PERFORMANCE
 	{ 1, 850000, ACPU_PLL_2, 2, 0, 106250, 3, 7, 200000 },
         { 1, 900000, ACPU_PLL_2, 2, 0, 112500, 3, 7, 200000 },
         { 1, 950000, ACPU_PLL_2, 2, 0, 118750, 3, 7, 200000 },
@@ -249,8 +249,8 @@ static struct clkctl_acpu_speed pll0_960_pll1_196_pll2_1200_pll4_800[] = {
 /* 7627aa PLL4 @ 1008MHz with GSM capable modem */
 static struct clkctl_acpu_speed pll0_960_pll1_245_pll2_1200_pll4_1008[] = {
 	{ 0, 19200, ACPU_PLL_TCXO, 0, 0, 2400, 3, 0, 30720 },
-	{ 1, 61440, ACPU_PLL_1, 1, 3,  7680, 3, 1, 61440 },
-	{ 1, 122880, ACPU_PLL_1, 1, 1,  15360, 3, 2, 61440 },
+	{ 0, 61440, ACPU_PLL_1, 1, 3,  7680, 3, 1, 61440 },
+	{ 0, 122880, ACPU_PLL_1, 1, 1,  15360, 3, 2, 61440 },
 	{ 1, 245760, ACPU_PLL_1, 1, 0, 30720, 3, 3, 61440 },
 	{ 0, 300000, ACPU_PLL_2, 2, 3, 37500, 3, 4, 122880 },
 	{ 1, 320000, ACPU_PLL_0, 4, 2, 40000, 3, 4, 122880 },
@@ -259,42 +259,45 @@ static struct clkctl_acpu_speed pll0_960_pll1_245_pll2_1200_pll4_1008[] = {
 	{ 1, 600000, ACPU_PLL_2, 2, 1, 75000, 3, 6, 160000 },
 	{ 1, 800000, ACPU_PLL_4, 6, 0, 100000, 3, 6, 200000 },
 	{ 1, 1008000, ACPU_PLL_4, 6, 0, 126000, 3, 7, 200000},
-#ifdef CONFIG_MSM7X27A_OVERCLOCK
-	{ 1, 1056000, ACPU_PLL_4, 6, 0, 132000, 3, 7, 200000 },
-	{ 1, 1113600, ACPU_PLL_4, 6, 0, 139200, 3, 7, 200000 },
-	{ 1, 1152000, ACPU_PLL_4, 6, 0, 144000, 3, 7, 200000 },
-	{ 1, 1190400, ACPU_PLL_4, 6, 0, 148800, 3, 7, 200000 },
-	{ 1, 1228800, ACPU_PLL_4, 6, 0, 153600, 3, 7, 200000 },
-	{ 1, 1267200, ACPU_PLL_4, 6, 0, 158400, 3, 7, 200000 },
-	{ 1, 1300000, ACPU_PLL_4, 6, 0, 162500, 3, 7, 200000 },
+#ifdef CONFIG_MSM7X27A_OVERCLOCK_PERFORMANCE
+        { 1, 1050000, ACPU_PLL_2, 2, 0, 131250, 3, 7, 200000 },
+        { 1, 1100000, ACPU_PLL_2, 2, 0, 137500, 3, 7, 200000 },	
+	{ 1, 1150000, ACPU_PLL_2, 2, 0, 143750, 3, 7, 220000 },
+	{ 1, 1200000, ACPU_PLL_2, 2, 0, 150000, 3, 7, 220000 }, 		
+	{ 1, 1250000, ACPU_PLL_2, 2, 0, 156250, 3, 7, 200000 },
+	{ 1, 1300000, ACPU_PLL_2, 2, 0, 162500, 3, 7, 200000 },
+#ifdef CONFIG_MSM7X27A_OVERCLOCK_BALANCED
 	{ 1, 1348000, ACPU_PLL_4, 6, 0, 168500, 3, 7, 200000 },
 	{ 1, 1396000, ACPU_PLL_4, 6, 0, 174500, 3, 7, 200000 },
+#endif
 #endif
 	{ 0 }
 };
 
 /* 7627aa PLL4 @ 1008MHz with CDMA capable modem */
 static struct clkctl_acpu_speed pll0_960_pll1_196_pll2_1200_pll4_1008[] = {
-	{ 0, 19200, ACPU_PLL_TCXO, 0, 0, 2400, 3, 0, 24576 },
-	{ 0, 65536, ACPU_PLL_1, 1, 3,  8192, 3, 1, 49152 },
-	{ 1, 98304, ACPU_PLL_1, 1, 1,  12288, 3, 2, 49152 },
-	{ 1, 196608, ACPU_PLL_1, 1, 0, 24576, 3, 3, 98304 },
+	{ 0, 19200, ACPU_PLL_TCXO, 0, 0, 2400, 3, 0, 30720 },
+	{ 0, 61440, ACPU_PLL_1, 1, 3,  7680, 3, 1, 61440 },
+	{ 0, 122880, ACPU_PLL_1, 1, 1,  15360, 3, 2, 61440 },
+	{ 1, 245760, ACPU_PLL_1, 1, 0, 30720, 3, 3, 61440 },
 	{ 0, 300000, ACPU_PLL_2, 2, 3, 37500, 3, 4, 122880 },
 	{ 1, 320000, ACPU_PLL_0, 4, 2, 40000, 3, 4, 122880 },
 	{ 1, 480000, ACPU_PLL_0, 4, 1, 60000, 3, 5, 122880 },
 	{ 0, 504000, ACPU_PLL_4, 6, 1, 63000, 3, 6, 160000 },
 	{ 1, 600000, ACPU_PLL_2, 2, 1, 75000, 3, 6, 160000 },
+	{ 1, 800000, ACPU_PLL_4, 6, 0, 100000, 3, 6, 200000 },
 	{ 1, 1008000, ACPU_PLL_4, 6, 0, 126000, 3, 7, 200000},
-#ifdef CONFIG_MSM7X27A_OVERCLOCK
-	{ 1, 1056000, ACPU_PLL_4, 6, 0, 132000, 3, 7, 200000 },
-	{ 1, 1113600, ACPU_PLL_4, 6, 0, 139200, 3, 7, 200000 },
-	{ 1, 1152000, ACPU_PLL_4, 6, 0, 144000, 3, 7, 200000 },
-	{ 1, 1190400, ACPU_PLL_4, 6, 0, 148800, 3, 7, 200000 },
-	{ 1, 1228800, ACPU_PLL_4, 6, 0, 153600, 3, 7, 200000 },
-	{ 1, 1267200, ACPU_PLL_4, 6, 0, 158400, 3, 7, 200000 },
-	{ 1, 1300000, ACPU_PLL_4, 6, 0, 162500, 3, 7, 200000 },
+#ifdef CONFIG_MSM7X27A_OVERCLOCK_PERFORMANCE
+        { 1, 1050000, ACPU_PLL_2, 2, 0, 131250, 3, 7, 200000 },
+        { 1, 1100000, ACPU_PLL_2, 2, 0, 137500, 3, 7, 200000 },	
+	{ 1, 1150000, ACPU_PLL_2, 2, 0, 143750, 3, 7, 220000 },
+	{ 1, 1200000, ACPU_PLL_2, 2, 0, 150000, 3, 7, 220000 }, 		
+	{ 1, 1250000, ACPU_PLL_2, 2, 0, 156250, 3, 7, 200000 },
+	{ 1, 1300000, ACPU_PLL_2, 2, 0, 162500, 3, 7, 200000 },
+#ifdef CONFIG_MSM7X27A_OVERCLOCK_BALANCED
 	{ 1, 1348000, ACPU_PLL_4, 6, 0, 168500, 3, 7, 200000 },
 	{ 1, 1396000, ACPU_PLL_4, 6, 0, 174500, 3, 7, 200000 },
+#endif
 #endif
 	{ 0 }
 };
@@ -666,21 +669,35 @@ static void acpuclk_set_div(const struct clkctl_acpu_speed *hunt_s)
 {
 	uint32_t reg_clkctl, reg_clksel, clk_div, src_sel;
 
- 	#ifdef CONFIG_MSM7X27A_OVERCLOCK	
+#ifdef CONFIG_MSM7X27A_OVERCLOCK	
 	uint32_t a11_div;	
- 	#endif
+#endif
 
 	reg_clksel = readl_relaxed(A11S_CLK_SEL_ADDR);
 
 	/* AHB_CLK_DIV */
 	clk_div = (reg_clksel >> 1) & 0x03;
 #ifdef CONFIG_MSM7X27A_OVERCLOCK
+
+#ifdef CONFIG_MACH_MSM7X25A_M4
 	a11_div=hunt_s->a11clk_src_div;
-         if(hunt_s->a11clk_khz>800000) {
-         a11_div=0;
-         writel(hunt_s->a11clk_khz/19200, MSM_CLK_CTL_BASE+0x33C);
-         udelay(50);
-}
+        if(hunt_s->a11clk_khz>800000) {
+        a11_div=0;
+        writel(hunt_s->a11clk_khz/19200, MSM_CLK_CTL_BASE+0x33C);
+        cpu_relax();
+        udelay(50);
+	}
+#endif
+
+#ifdef CONFIG_MACH_MSM7X27A_U0
+	a11_div=hunt_s->a11clk_src_div;
+        if(hunt_s->a11clk_khz>1008000) {
+        a11_div=0;
+        writel(hunt_s->a11clk_khz/19200, MSM_CLK_CTL_BASE+0x33C);
+        cpu_relax();
+        udelay(50);
+	}
+#endif
 #endif
 	/* CLK_SEL_SRC1NO */
 	src_sel = reg_clksel & 1;
@@ -699,7 +716,11 @@ static void acpuclk_set_div(const struct clkctl_acpu_speed *hunt_s)
 	reg_clkctl = readl_relaxed(A11S_CLK_CNTL_ADDR);
 	reg_clkctl &= ~(0xFF << (8 * src_sel));
 	reg_clkctl |= hunt_s->a11clk_src_sel << (4 + 8 * src_sel);
+#ifdef CONFIG_MSM7X27A_OVERCLOCK
+	reg_clkctl |= a11_div << (0 + 8 * src_sel);
+#else
 	reg_clkctl |= hunt_s->a11clk_src_div << (0 + 8 * src_sel);
+#endif
 	writel_relaxed(reg_clkctl, A11S_CLK_CNTL_ADDR);
 
 	/* Program clock source selection */

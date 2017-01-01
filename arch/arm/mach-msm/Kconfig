@@ -1571,7 +1571,7 @@ config MSM_CPU_FREQ_MIN
 	depends on MSM_CPU_FREQ_SET_MIN_MAX
 	default 245760
 
-config MSM7X27A_OVERCLOCK
+config MSM7X27A_OVERCLOCK_PERFORMANCE
 	bool "Enable SoC overclocking for MSM7x27A"
 	depends on MSM_CPU_FREQ_SET_MIN_MAX
         depends on ARCH_MSM7X27A
