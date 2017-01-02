@@ -40,6 +40,7 @@ import subprocess
 # force LANG to be set to en_US.UTF-8 to get consistent warnings.
 
 allowed_warnings = set([
+    #"msm_adc.c:1190", Need to fix it yet
  ])
 
 # Capture the name of the object file, can find it.
